@@ -1,4 +1,5 @@
 from PySide2.QtWidgets import *
+from exercice2 import *
 class SQLClientWindow(QWidget):
     def __init__(self):
         QWidget.__init__(self)
@@ -14,14 +15,11 @@ class SQLClientWindow(QWidget):
 
         self.texte=QTextEdit()
         self.layout.addWidget(self.texte)
-        
+
 
         self.resultTable=QTableWidget(5,3)
         self.layout.addWidget(self.resultTable)
         self.resultTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-
-
 
         self.setLayout(self.layout)
 
@@ -41,12 +39,11 @@ class ButtonsPanel(QWidget):
 
 
 
-
-
-
 if __name__ == "__main__":
    app = QApplication([])
-   win = SQLClientWindow()
-   win.show()
+   ihm = SQLClientWindow()
+   ihmEX2=ConfigurationDialog()
+   ihm.show()
+   ihmEX2.show()
    app.exec_()
 
